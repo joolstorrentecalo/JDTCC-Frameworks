@@ -22,7 +22,7 @@ class MainActivity : BaseSimpleActivity() {
         appLaunched(BuildConfig.APPLICATION_ID)
 
         main_color_customization.setOnClickListener {
-            startCustomizationActivity()
+
         }
     }
 

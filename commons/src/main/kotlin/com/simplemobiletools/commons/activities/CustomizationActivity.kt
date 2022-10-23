@@ -215,7 +215,7 @@ class CustomizationActivity : BaseSimpleActivity() {
 
         RadioGroupDialog(this@CustomizationActivity, items, curSelectedThemeId) {
             if (it == THEME_SHARED && !isThankYouInstalled()) {
-                PurchaseThankYouDialog(this)
+
                 return@RadioGroupDialog
             }
 
@@ -649,7 +649,7 @@ class CustomizationActivity : BaseSimpleActivity() {
                 saveChanges(false)
             }
         } else {
-            PurchaseThankYouDialog(this)
+
         }
     }
 

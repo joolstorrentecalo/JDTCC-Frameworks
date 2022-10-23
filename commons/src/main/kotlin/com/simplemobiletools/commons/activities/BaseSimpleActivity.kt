@@ -71,21 +71,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
 
     abstract fun getAppLauncherName(): String
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        if (useDynamicTheme) {
-            setTheme(getThemeId(showTransparentTop = showTransparentTop))
-        }
 
-        super.onCreate(savedInstanceState)
-        if (!packageName.startsWith("com.simplemobiletools.", true)) {
-            if ((0..50).random() == 10 || baseConfig.appRunCount % 100 == 0) {
-                val label = "You are using a fake version of the app. For your own safety download the original one from www.simplemobiletools.com. Thanks"
-                ConfirmationDialog(this, label, positive = R.string.ok, negative = 0) {
-                    launchViewIntent("https://play.google.com/store/apps/dev?id=9070296388022589266")
-                }
-            }
-        }
-    }
 
     @SuppressLint("NewApi")
     override fun onResume() {
@@ -475,43 +461,11 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
         }
     }
 
-    fun startAboutActivity(appNameId: Int, licenseMask: Long, versionName: String, faqItems: ArrayList<FAQItem>, showFAQBeforeMail: Boolean) {
-        hideKeyboard()
-        Intent(applicationContext, AboutActivity::class.java).apply {
-            putExtra(APP_ICON_IDS, getAppIconIDs())
-            putExtra(APP_LAUNCHER_NAME, getAppLauncherName())
-            putExtra(APP_NAME, getString(appNameId))
-            putExtra(APP_LICENSES, licenseMask)
-            putExtra(APP_VERSION_NAME, versionName)
-            putExtra(APP_FAQ, faqItems)
-            putExtra(SHOW_FAQ_BEFORE_MAIL, showFAQBeforeMail)
-            startActivity(this)
-        }
-    }
-
-    fun startCustomizationActivity() {
-        if (!packageName.contains("slootelibomelpmis".reversed(), true)) {
-            if (baseConfig.appRunCount > 100) {
-                val label = "You are using a fake version of the app. For your own safety download the original one from www.simplemobiletools.com. Thanks"
-                ConfirmationDialog(this, label, positive = R.string.ok, negative = 0) {
-                    launchViewIntent("https://play.google.com/store/apps/dev?id=9070296388022589266")
-                }
-                return
-            }
-        }
-
-        Intent(applicationContext, CustomizationActivity::class.java).apply {
-            putExtra(APP_ICON_IDS, getAppIconIDs())
-            putExtra(APP_LAUNCHER_NAME, getAppLauncherName())
-            startActivity(this)
-        }
-    }
-
     fun handleCustomizeColorsClick() {
         if (isOrWasThankYouInstalled()) {
-            startCustomizationActivity()
+
         } else {
-            FeatureLockedDialog(this) {}
+
         }
     }
 
