@@ -24,21 +24,6 @@ class MainActivity : BaseSimpleActivity() {
         main_color_customization.setOnClickListener {
             startCustomizationActivity()
         }
-
-        //startCustomizationActivity()
-        //startAboutActivity(R.string.smtco_app_name, 3, "0.2", arrayListOf(FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons)), false)
-
-        /*val letters = arrayListOf("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q")
-        StringsAdapter(this, letters, media_grid, media_refresh_layout) {
-        }.apply {
-            media_grid.adapter = this
-        }
-
-        media_refresh_layout.setOnRefreshListener {
-            Handler().postDelayed({
-                media_refresh_layout.isRefreshing = false
-            }, 1000L)
-        }*/
     }
 
     override fun onResume() {
