@@ -1,9 +1,9 @@
 <resources>
 
     <style name="AppTheme.Base" parent="Theme.Material3.Dark.NoActionBar">
-        <item name="colorPrimary">@color/color_primary</item>
-        <item name="colorPrimaryDark">@color/color_primary_dark</item>
-        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorPrimary">#E91E63</item>
+        <item name="colorPrimaryDark">#E91E63</item>
+        <item name="colorAccent">#E91E63</item>
         <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
         <item name="spinnerDropDownItemStyle">@style/SpinnerItem.DropDownItem</item>
         <item name="android:spinnerDropDownItemStyle">@style/SpinnerItem.DropDownItem</item>
@@ -16,7 +16,7 @@
         <item name="bottomSheetDialogTheme">@style/BottomSheetDialogTheme</item>
         <item name="android:actionModeCloseDrawable">@drawable/ic_arrow_left_vector</item>
         <item name="android:forceDarkAllowed">false</item>
-        <item name="windowActionModeOverlay">true</item>
+        <item name="windowActionModeOverlay">true</item>    <!-- replace casual top menu with contextual menu after long pressing an item -->
         <item name="android:actionOverflowButtonStyle">@style/ActionMenuOverflowIcon</item>
     </style>
 
